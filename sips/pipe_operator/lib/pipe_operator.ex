@@ -1,0 +1,2 @@
+defmodule PipeOperator do
+end

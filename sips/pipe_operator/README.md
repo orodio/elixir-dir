@@ -1,0 +1,4 @@
+PipeOperator
+============
+
+** TODO: Add description **

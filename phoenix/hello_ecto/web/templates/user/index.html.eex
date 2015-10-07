@@ -1,0 +1,35 @@
+<h2>Listing users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Bui</th>
+      <th>Number of pets</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <% path_show_user = user_path(@conn, :show, user) %>
+    <% path_edit_user = user_path(@conn, :edit, user) %>
+    <% path_del_user  = user_path(@conn, :delete, user) %>
+
+    <tr>
+      <td><%= link user.name, to: path_show_user %></td>
+      <td><%= link user.email, to: path_show_user %></td>
+      <td><%= link user.bui, to: path_show_user %></td>
+      <td><%= link user.number_of_pets, to: path_show_user %></td>
+
+      <td class="text-right">
+        <%= link "Edit", to: path_edit_user, class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: path_del_user, method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New user", to: user_path(@conn, :new) %>

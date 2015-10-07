@@ -1,0 +1,6 @@
+<div class="jumbotron">
+  <h2>Woot Woot</h2>
+  <a href="<%= hello_path(@conn, :show, "Frank") %>">Frank</a>
+  <a href="<%= hello_path(@conn, :show, "Bob") %>">Bob</a>
+  <a href="<%= hello_path(@conn, :show, "Gary") %>">Gary</a>
+</div>
